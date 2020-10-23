@@ -19,7 +19,7 @@
 	   </div>
 
 	   <div class="trash">
-		   	<%= link_to project_list_project_task_path(@project_list, project_task.id), method: :delete, data: {confirm: "Are you sure?"} do %>
+		   	<%= link_to project_list_project_task_path(@project_list, project_task.id), method: :delete, data: {confirm: "Do you want to delete the task?"} do %>
 		   	<i class ="fa fa-trash"></i>
 		   	<% end %>
 		</div>
