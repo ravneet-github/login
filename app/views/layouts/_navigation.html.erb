@@ -1,0 +1,18 @@
+ <% if current_user %>
+	<li> Hello, <%= current_user.email %></li>
+	<li><%= link_to "Sign Out",  destroy_user_session_path, method: :delete %></li>
+	
+
+	<% else %>
+	<h2 style = "color:white">Welcome!!</h2>
+	<div>
+		<%= link_to "Sign Up", new_user_registration_path %>
+		<i class ="fa fa-sign-in"></i>
+	</div>
+	<div>
+	<%= link_to "Sign In", new_user_session_path %>
+	</div>
+	<div>
+	<%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+	</div>
+<% end %>

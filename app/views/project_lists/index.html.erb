@@ -1,0 +1,24 @@
+<div class="forms">
+
+<!--<%= @project_lists.each do |project_list| %>-->
+
+	  <div class="index_row_clearfix">
+
+	  	<% if project_list.user == current_user %>
+	  		  	
+		    <h3 class="project_list_title"><%= link_to project_list.title, project_list %></h3>
+		    <p class="project_list_sub_title"><%= project_list.description %></p>
+	    
+
+	     <% end %>   
+	  </div> 	
+<!--<% end %>-->
+		<% if current_user %>
+		<div class="links">
+		<%= link_to "New Project", new_project_list_path %>
+		</div>
+		<% end %>
+		
+
+</div>
+

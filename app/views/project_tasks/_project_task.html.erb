@@ -1,0 +1,57 @@
+<div class="row clearfix">
+	<% if project_task.completed? %>
+	   <div class="complete">
+	   	<%= link_to complete_project_list_project_task_path(@project_list, project_task.id), method: :patch do %>
+	   	<i style="opacity: 0.4;" class ="fa fa-check"></i>
+	   	<% end %>
+	   </div>
+
+	   <div class="project_task">
+	   	<p style="opacity: 0.9;"><strike><%= project_task.content %></strike></p>
+	   </div>
+
+	   <div class="deadline">
+	   	<p style="opacity: 0.9;"><strike><%= project_task.task_deadline %></strike></p>
+	   </div>
+
+	   <div class="field">
+	   <p style="opacity: 0.9;"><strike><img src ="<%= project_task.image %>"></strike></p>
+	   </div>
+
+	   <div class="trash">
+		   	<%= link_to project_list_project_task_path(@project_list, project_task.id), method: :delete, data: {confirm: "Are you sure?"} do %>
+		   	<i class ="fa fa-trash"></i>
+		   	<% end %>
+		</div>
+	   
+	   
+	<% else %>
+		<div class="complete">
+	   	<%= link_to complete_project_list_project_task_path(@project_list, project_task.id), method: :patch do %>
+	   	<i class ="fa fa-check"></i>
+	   	<% end %>
+	   </div>
+
+	   <div class="project_task">
+	   	<p><%= project_task.content %></p>
+	   </div>
+
+	   
+
+	   <div class="deadline">
+	   	<%= project_task.task_deadline %>
+	   </div>
+
+	   <div class="field">
+	   <img src ="<%= project_task.image %>">
+	   </div>
+
+	   <div class="trash">
+		   	<%= link_to project_list_project_task_path(@project_list, project_task.id), method: :delete, data: {confirm: "Are you sure?"} do %>
+		   	<i class ="fa fa-trash"></i>
+		   	<% end %>
+		</div>
+	   
+	<% end %>
+
+</div>

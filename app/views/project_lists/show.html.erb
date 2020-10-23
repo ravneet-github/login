@@ -1,0 +1,21 @@
+<!--<p id="notice"><%= notice %></p>-->
+
+<h2 class="project_list_title"><%= @project_list.title %></h2>
+<p class="project_list_sub_title"><%= @project_list.description %></p>
+
+<div id="project_tasks_wrapper">
+    
+    <%= render @project_list.project_tasks %>
+
+	<div id="form">
+		<%= render "project_tasks/form" %>
+	</div>
+	
+</div>
+
+<div class="links">
+  <%= link_to 'Update Project', edit_project_list_path(@project_list) %> |
+  <%= link_to 'Delete Project', @project_list, method: :delete %> |
+  <%= link_to 'Back', project_lists_path %>
+</div>
+
